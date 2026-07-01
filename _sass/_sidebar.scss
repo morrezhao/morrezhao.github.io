@@ -235,3 +235,32 @@
     }
   }
 }
+
+@include breakpoint(max-width $small) {
+  .sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .author__avatar {
+    display: block;
+    flex: 0 0 40px;
+    width: 40px;
+  }
+
+  .author__content {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    padding-right: 0;
+    overflow-wrap: break-word;
+  }
+
+  .author__urls-wrapper {
+    display: block;
+    flex: 0 0 auto;
+    margin-left: auto;
+  }
+}

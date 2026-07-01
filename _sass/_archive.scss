@@ -109,6 +109,149 @@
 
 
 /*
+   Publication list
+   ========================================================================== */
+
+.publication-list__item {
+  max-width: 46rem;
+  margin-bottom: 1.15rem;
+  padding-right: 0;
+
+  @include breakpoint($medium) {
+    padding-right: 0;
+  }
+
+  @include breakpoint($large) {
+    padding-right: 0;
+  }
+
+  @include breakpoint($x-large) {
+    padding-right: 0;
+  }
+}
+
+.publication-item {
+  padding: 0 0 1.2rem;
+  border-bottom: 1px solid mix(#fff, $gray, 82%);
+}
+
+.publication-list__item:last-child {
+  margin-bottom: 0;
+
+  .publication-item {
+    border-bottom: 0;
+  }
+}
+
+.publication-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.35rem;
+  color: mix(#000, $gray, 15%);
+  font-family: $sans-serif;
+  font-size: $type-size-7;
+  line-height: 1.4;
+}
+
+.publication-item__venue {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.16rem 0.48rem;
+  border: 1px solid mix(#fff, $info-color, 68%);
+  border-radius: $border-radius;
+  background: mix(#fff, $info-color, 93%);
+  color: mix(#000, $info-color, 35%);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.publication-item__year {
+  color: mix(#000, $gray, 20%);
+  font-weight: 600;
+}
+
+.publication-item__title {
+  margin: 0 0 0.35rem;
+  font-family: $sans-serif;
+  font-size: 1em;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+
+  a,
+  span {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: $darker-gray;
+    text-decoration: none;
+
+    &:hover {
+      color: $link-color-hover;
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    color: $darker-gray;
+  }
+}
+
+.publication-item__authors {
+  margin: 0 0 0.28rem;
+  color: $dark-gray;
+  font-size: 0.9em;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+
+  strong {
+    color: $darker-gray;
+    font-weight: 700;
+  }
+}
+
+.publication-item__excerpt {
+  margin: 0;
+  color: mix(#000, $gray, 8%);
+  font-size: 0.85em;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+}
+
+.publication-item__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.6rem;
+    padding: 0.14rem 0.5rem;
+    border: 1px solid mix(#fff, $gray, 70%);
+    border-radius: $border-radius;
+    color: mix(#000, $info-color, 30%);
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+
+    &:hover {
+      border-color: mix(#fff, $info-color, 45%);
+      background: mix(#fff, $info-color, 94%);
+      color: $link-color-hover;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/*
    Grid view
    ========================================================================== */
 

@@ -12,6 +12,52 @@
   {% assign title = post.title %}
 {% endif %}
 
+{% if post.collection == 'publications' %}
+  {% assign publication_year = post.date | default: "1900-01-01" | date: "%Y" %}
+  {% assign paper_link_label = "Paper" %}
+  {% if post.paperurl contains "openreview.net" %}
+    {% assign paper_link_label = "OpenReview" %}
+  {% elsif post.paperurl contains "arxiv.org" %}
+    {% assign paper_link_label = "arXiv" %}
+  {% elsif post.paperurl contains "doi.org" %}
+    {% assign paper_link_label = "DOI" %}
+  {% endif %}
+
+  <div class="{{ include.type | default: "list" }}__item publication-list__item">
+    <article class="publication-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+      <div class="publication-item__meta">
+        {% if post.venue %}
+          <span class="publication-item__venue">{{ post.venue }}</span>
+        {% endif %}
+        {% unless post.venue contains publication_year %}
+          <span class="publication-item__year">{{ publication_year }}</span>
+        {% endunless %}
+      </div>
+
+      <h2 class="publication-item__title" itemprop="headline">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}">{{ title }}</a>
+        {% else %}
+          <span>{{ title }}</span>
+        {% endif %}
+      </h2>
+
+      {% if post.authors %}
+        <p class="publication-item__authors" itemprop="author">{{ post.authors }}</p>
+      {% endif %}
+
+      {% if post.excerpt %}
+        <p class="publication-item__excerpt" itemprop="description">{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+      {% endif %}
+
+      <div class="publication-item__links">
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}">{{ paper_link_label }}</a>
+        {% endif %}
+      </div>
+    </article>
+  </div>
+{% else %}
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
@@ -71,3 +117,4 @@
 
   </article>
 </div>
+{% endif %}
