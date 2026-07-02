@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Welcome to the personal website of Morre Zhao Enhan"
+title: "Welcome to the personal website of Enhan(Morre) Zhao"
 excerpt: "About me"
 author_profile: true
 redirect_from:
@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I'm Zhao Enhan, a 1st Ph.D student currently at Peking University. Before that, I graduate from department of EECS as an undergraduate student from Peking University. My research interests lie in the post-training and evaluation of LLM and agents, I also research in generative models. I'm fortunate to be advised by [Di He](https://dihe-pku.github.io).
+Hi, I'm Enhan Zhao, a 1st Ph.D student currently at Peking University. Before that, I graduate from department of EECS as an undergraduate student from Peking University. My research interests lie in the post-training and evaluation of LLM and agents, I also research in generative models. I'm fortunate to be advised by [Di He](https://dihe-pku.github.io).
 
 Education
 ======

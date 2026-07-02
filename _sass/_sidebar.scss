@@ -236,31 +236,49 @@
   }
 }
 
-@include breakpoint(max-width $small) {
+@include breakpoint(max-width $medium) {
   .sidebar {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    display: block;
     max-width: 100%;
+  }
+
+  .sidebar > div[itemscope] {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    column-gap: 0.75rem;
+    align-items: start;
   }
 
   .author__avatar {
     display: block;
-    flex: 0 0 40px;
-    width: 40px;
+    grid-row: 1 / span 2;
+    align-self: start;
+    width: 56px;
   }
 
   .author__content {
     display: block;
-    flex: 1 1 0;
+    grid-column: 2;
     min-width: 0;
+    padding-left: 0;
     padding-right: 0;
     overflow-wrap: break-word;
   }
 
+  .author__avatar img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+  }
+
+  .author__bio {
+    margin-top: 0.15rem;
+  }
+
   .author__urls-wrapper {
     display: block;
-    flex: 0 0 auto;
-    margin-left: auto;
+    grid-column: 2;
+    margin-top: 0.35rem;
+    margin-left: 0;
   }
 }
