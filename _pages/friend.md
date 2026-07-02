@@ -3,6 +3,7 @@ permalink: /friend_hidden/
 title: "Friend"
 excerpt: "Some links to my friends' homepage"
 sitemap: false
+published: false
 ---
 
 <div style="display: flex; justify-content: space-between; align-items: stretch;">
